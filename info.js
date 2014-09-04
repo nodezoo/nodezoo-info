@@ -12,7 +12,7 @@ module.exports = function info( options ){
 
   options = seneca.util.deepextend({
     size: 99999,
-    wait: 2222
+    wait: 222
   },options)
 
 
