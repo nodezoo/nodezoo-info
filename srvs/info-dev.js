@@ -1,4 +1,4 @@
 
 var seneca = require('seneca')()
-      .use('./info.js')
+      .use('../info.js')
       .listen()

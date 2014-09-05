@@ -1,5 +1,7 @@
 module.exports = {
   transport:{
-    port: 9100
+    web: {
+      port: 9100
+    }
   }
 }
