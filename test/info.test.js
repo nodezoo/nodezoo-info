@@ -17,7 +17,7 @@ function make_errhandler(fin) {
 
 describe('npm', function() {
 
-  var si = seneca({log:'silent',from:'./mine.options.js'})
+  var si = seneca({log:'silent'})
         .use('../info.js',{wait:3333})
         .use('../../nodezoo-github')
         .use('../../nodezoo-npm')
@@ -50,7 +50,7 @@ describe('npm', function() {
 
     si.act(
       'role:info,cmd:get',
-      {name:'npm-version-verify-test'}, 
+      {name:'npm-version-verify-test'},
       function(err,out){
         console.log(out)
         fin()
