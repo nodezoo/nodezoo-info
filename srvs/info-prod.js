@@ -6,5 +6,5 @@ var seneca = require('seneca')()
       .client({type:'redis',pin:'role:info,req:part'})
       .listen({type:'redis',pin:'role:info,res:part'})
 
-      .listen(9100)
+      .listen()
 
