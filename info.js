@@ -1,77 +1,52 @@
 /* Copyright (c) 2014 Richard Rodger, MIT License */
 /* jshint node:true, asi:true, eqnull:true */
-"use strict";
+'use strict';
 
 
 var lru = require('lru-cache')
 
 
 
-module.exports = function info( options ){
+module.exports = function info(options) {
   var seneca = this
 
-  options = seneca.util.deepextend({
-    size: 99999,
-    wait: 222
-  },options)
+  options = seneca.util.deepextend({size: 99999, wait: 222}, options);
+
+  var infoCache = lru(options.size);
 
 
-  var info_cache = lru( options.size )
-
-
-  seneca.add(
-    'role:info,cmd:get', 
-    {
-      name:   { required$:true, string$:true },
-    }, 
-    cmd_get)
-
-
-  seneca.add(
-    'role:info,req:part', 
-    { 
-      name: { required$:true, string$:true },
-    },
-    req_module)
-
-
-  seneca.add(
-    'role:info,res:part', 
-    { 
-      name: { required$:true, string$:true },
-    },
-    res_module)
-
-
-
-  function cmd_get( args, done ) {
-    var seneca  = this
+  function cmdGet(args, done) {
+    var seneca = this;
 
     var name = args.name
-    seneca.act('role:info,req:part',{name:name})
-
+    seneca.act('role:info,req:part', {name:name})
     setTimeout(function(){
-      
-      var data = info_cache.get( name )
-      done(null,data)
-
-    },options.wait)
-  }
-
-  
-  function req_module( args, done ) {
-    done()
+      var data = infoCache.get(name);
+      done(null,data);
+    },options.wait);
   }
 
 
-  function res_module( args, done ) {
-    var name = args.name
+
+  function reqModule(args, done) {
+    done();
+  }
+
+
+
+  function resModule(args, done) {
+    var name = args.name;
     
-    var data = info_cache.get( name ) || {}
-    data[ args.part ] = args.data
-    info_cache.set( name, data )
-
-    done()
+    var data = infoCache.get( name ) || {};
+    data[ args.part ] = args.data;
+    infoCache.set(name, data);
+    done();
   }
-  
+
+
+
+  seneca.add('role:info,cmd:get', {name: { required$:true, string$:true }}, cmdGet);
+  seneca.add('role:info,req:part', {name: { required$:true, string$:true }}, reqModule);
+  seneca.add('role:info,res:part', {name: { required$:true, string$:true }}, resModule);
 }
+
