@@ -1,10 +1,9 @@
-/* Copyright (c) 2014 Richard Rodger, MIT License */
+/* Copyright (c) 2014-2015 Richard Rodger, MIT License */
 /* jshint node:true, asi:true, eqnull:true */
 "use strict";
 
 
 var lru = require('lru-cache')
-
 
 
 module.exports = function info( options ){
@@ -19,29 +18,9 @@ module.exports = function info( options ){
   var info_cache = lru( options.size )
 
 
-  seneca.add(
-    'role:info,cmd:get', 
-    {
-      name:   { required$:true, string$:true },
-    }, 
-    cmd_get)
-
-
-  seneca.add(
-    'role:info,req:part', 
-    { 
-      name: { required$:true, string$:true },
-    },
-    req_module)
-
-
-  seneca.add(
-    'role:info,res:part', 
-    { 
-      name: { required$:true, string$:true },
-    },
-    res_module)
-
+  seneca.add( 'role:info,cmd:get', cmd_get )
+  seneca.add( 'role:info,req:part', req_module )
+  seneca.add( 'role:info,res:part', res_module )
 
 
   function cmd_get( args, done ) {
@@ -52,7 +31,7 @@ module.exports = function info( options ){
 
     setTimeout(function(){
       
-      var data = info_cache.get( name )
+      var data = info_cache.get( name ) || {}
       done(null,data)
 
     },options.wait)

@@ -1,11 +1,8 @@
 {
   "name": "nodezoo-info",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "nodezoo.com micro-service handling module info.",
   "main": "info.js",
-  "scripts": {
-    "test": "mocha test/*.test.js"
-  },
   "keywords": [
     "nodezoo",
     "seneca",
@@ -16,10 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache": "^2.5.0",
-    "mocha": "^1.21.4",
-    "seneca-redis-transport": "^0.1.1"
-  },
-  "devDependencies": {
-    "seneca": "^0.5.20"
+    "seneca": "^0.6.5",
+    "seneca-redis-transport": "^0.3.0"
   }
 }
