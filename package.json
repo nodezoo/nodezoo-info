@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache": "^2.5.0",
-    "seneca": "^0.6.5",
+    "seneca": "^0.7.0",
     "seneca-redis-transport": "^0.3.0"
   }
 }
