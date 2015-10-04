@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-info",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "nodezoo.com micro-service handling module info.",
   "main": "info.js",
   "keywords": [
