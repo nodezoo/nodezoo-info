@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache": "^2.5.0",
-    "seneca": "https://github.com/rjrodger/seneca",
+    "seneca": "^0.7.1",
     "seneca-msgstats": "^0.2.0",
     "seneca-redis-transport": "^0.3.0"
   }
