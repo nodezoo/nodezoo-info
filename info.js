@@ -19,7 +19,6 @@ module.exports = function info( options ){
 
 
   seneca.add( 'role:info,cmd:get', cmd_get )
-  seneca.add( 'role:info,req:part', req_module )
   seneca.add( 'role:info,res:part', res_module )
 
 
@@ -35,11 +34,6 @@ module.exports = function info( options ){
       done(null,data)
 
     },options.wait)
-  }
-
-  
-  function req_module( args, done ) {
-    done()
   }
 
 
