@@ -1,52 +1,46 @@
 /* Copyright (c) 2014-2015 Richard Rodger, MIT License */
 /* jshint node:true, asi:true, eqnull:true */
-'use strict';
+'use strict'
 
 
-const LRU = require('lru-cache');
+var LRU = require('lru-cache')
 
 
-module.exports = function info( options ){
+module.exports = function info (options) {
+  var seneca = this
 
-    const seneca = this;
-
-    options = seneca.util.deepextend({
-        size: 99999,
-        wait: 222
-    },options);
-
-
-    const info_cache = LRU( options.size );
+  options = seneca.util.deepextend({
+    size: 99999,
+    wait: 222
+  }, options)
 
 
-    seneca.add( 'role:info,cmd:get', cmd_get );
-    seneca.add( 'role:info,res:part', res_module );
+  var info_cache = LRU(options.size)
 
 
-    const cmd_get = function ( args, done ) {
-
-        const senecA  = this;
-        const name = args.name;
-        senecA.act('role:info,req:part',{ name:name });
-
-        setTimeout(function (){
-
-            const data = info_cache.get(name) || {};
-            done(null,data);
-
-        },options.wait);
-    };
+  seneca.add('role:info,cmd:get', cmd_get)
+  seneca.add('role:info,res:part', res_module)
 
 
-    res_module = function (args, done) {
+  var cmd_get = function (args, done) {
+    var seneca = this
+    var name = args.name
+    seneca.act('role:info,req:part', { name: name })
 
-        const name = args.name;
+    setTimeout(() => {
+      var data = info_cache.get(name) || {}
+      done(null, data)
+    }, options.wait)
+  }
 
-        const data = info_cache.get( name ) || {};
-        data[ args.part ] = args.data;
-        info_cache.set( name, data );
 
-        done();
-    };
+  var res_module = function (args, done) {
+    var name = args.name
 
-};
+    var data = info_cache.get(name) || {}
+    data[ args.part ] = args.data
+    info_cache.set(name, data)
+
+    done()
+  }
+}
