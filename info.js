@@ -25,9 +25,9 @@ module.exports = function info( options ){
 
     const cmd_get = function ( args, done ) {
 
-        const senec  = this;
+        const senecA  = this;
         const name = args.name;
-        senec.act('role:info,req:part',{ name:name });
+        senecA.act('role:info,req:part',{ name:name });
 
         setTimeout(function (){
 
