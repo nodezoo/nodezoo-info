@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-info",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "nodezoo.com micro-service handling module info.",
   "main": "info.js",
   "keywords": [
@@ -13,8 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "lru-cache": "^2.5.0",
-    "seneca": "^0.7.1",
-    "seneca-msgstats": "^0.2.0",
-    "seneca-redis-transport": "^0.3.0"
+    "seneca-redis-transport": "^0.3.0",
+    "seneca": "https://github.com/senecajs/seneca",
+    "seneca-msgstats": "https://github.com/rjrodger/seneca-msgstats",
+    "seneca-mesh": "https://github.com/rjrodger/seneca-mesh",
+    "seneca-balance-client": "https://github.com/rjrodger/seneca-balance-client"
   }
 }
