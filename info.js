@@ -1,50 +1,68 @@
-/* Copyright (c) 2014-2015 Richard Rodger, MIT License */
-/* jshint node:true, asi:true, eqnull:true */
-"use strict";
+"use strict"
 
+// We cache our results inside an in mem lru cache,
+// this does some pruning and other bits for us.
+var Cache = require('lru-cache')
 
-var lru = require('lru-cache')
+var defaults = {
+  cache_size: 99999, // Size of our cache
+  wait: 222 // How long to wait before responding with cache data
+}
 
-
-module.exports = function info( options ){
+module.exports = function info (options) {
   var seneca = this
+  var extend = seneca.util.deepextend
 
-  options = seneca.util.deepextend({
-    size: 99999,
-    wait: 222
-  },options)
+  // merge our defaults with user options.
+  options = extend(defaults, options)
 
+  // our in mem cache instance.
+  var info_cache = Cache(options.size)
 
-  var info_cache = lru( options.size )
+  // Handle requests for module information. We farm out individual
+  // 'parts' of the request to other microservices. This means our
+  // responses are eventually consistant over time.
+  seneca.add({role: 'info', cmd: 'get'}, function (msg, done) {
+    var seneca = this
+    var name = msg.name
 
+    // Call out to anyone who wants to contribute info.
+    seneca.act({role: 'info', req: 'part', name: name})
 
-  seneca.add( 'role:info,cmd:get', cmd_get )
-  seneca.add( 'role:info,res:part', res_module )
+    // Before returning, we give other services a chance to update
+    // the cache, we'll run this function in the timeout below.
+    function return_entry () {
+      // Pull the latest entry from the cache
+      var entry = info_cache.get(name) || {}
 
+      // respond to the caller.
+      done(null, entry)
+    }
 
-  function cmd_get( args, done ) {
-    var seneca  = this
+    // kick off our timeout.
+    setTimeout(return_entry, options.wait)
+  })
 
-    var name = args.name
-    seneca.act('role:info,req:part',{name:name})
+  // Handle responses to our requests for data. Each responder
+  // provides us with a name we can use as a key. This handler
+  // may be called multiple times, depending on who responds.
+  seneca.add({role: 'info', res: 'part'}, function (msg, done) {
+    var name = msg.name
+    var part = msg.part
 
-    setTimeout(function(){
-      
-      var data = info_cache.get( name ) || {}
-      done(null,data)
+    // each entry in the cache is keyed by 'module' name
+    var entry = info_cache.get(name) || {}
 
-    },options.wait)
-  }
+    // Each service responds with a 'part' of data, we store
+    // this data based on the part name as the key.
+    entry[part] = msg.data
 
+    // Update the cache with our
+    // newly updated entry
+    info_cache.set(name, entry)
 
-  function res_module( args, done ) {
-    var name = args.name
-    
-    var data = info_cache.get( name ) || {}
-    data[ args.part ] = args.data
-    info_cache.set( name, data )
-
+    // All done.
     done()
-  }
-  
+  })
+
 }
