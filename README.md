@@ -1,7 +1,7 @@
 ![Nodezoo](https://raw.githubusercontent.com/rjrodger/nodezoo-web/to-redux/client/assets/img/logo-nodezoo.png)
 
 # nodezoo-info
-nodezoo.com micro-service handling module 
+nodezoo.com micro-service handling module. 
 
 - __Sponsor:__ [nearForm][]
 
