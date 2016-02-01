@@ -23,9 +23,9 @@ This micro-service recognizes the following messages:
 * _role:info,cmd:get_
 * _role:info,res:part_
 
-* _role:npm,cmd:get', cmd_get_
-* _role:npm,cmd:query', cmd_query_
-* _role:npm,cmd:extract', cmd_extract_
+* _role:npm,cmd:get_
+* _role:npm,cmd:query_
+* _role:npm,cmd:extract_
 * _role:entity,cmd:save,name:npm_
 
 
