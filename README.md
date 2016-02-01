@@ -23,10 +23,6 @@ This micro-service recognizes the following messages:
 * _role:info,cmd:get_
 * _role:info,res:part_
 
-* _role:npm,cmd:get_
-* _role:npm,cmd:query_
-* _role:npm,cmd:extract_
-* _role:entity,cmd:save,name:npm_
 
 
 
