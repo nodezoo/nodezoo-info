@@ -10,6 +10,7 @@
     "micro-service"
   ],
   "author": "Richard Rodger (http://richardrodger.com)",
+  "contributors": ["Kristina Matuleviciute (https://github.com/KristinaMatuleviciute)"],
   "license": "MIT",
   "dependencies": {
     "lru-cache": "^2.5.0",

@@ -20,10 +20,8 @@ Alternatively, fork the repository so that you can make your own changes.
 
 This micro-service recognizes the following messages:
 
-* _role:info,cmd:get_
-* _role:info,res:part_
-
-
+* _role:info,cmd:get_ - request module name and description
+* _role:info,res:part_ - respond with this information
 
 
 
