@@ -26,10 +26,10 @@ module.exports = function info( options ){
     var seneca  = this
 
     var name = args.name
-    seneca.act('role:info,req:part',{name:name})
+    seneca.act('role:info,res:part',{name:name})
 
     setTimeout(function(){
-      
+
       var data = info_cache.get( name ) || {}
       done(null,data)
 
@@ -39,12 +39,12 @@ module.exports = function info( options ){
 
   function res_module( args, done ) {
     var name = args.name
-    
+
     var data = info_cache.get( name ) || {}
     data[ args.part ] = args.data
     info_cache.set( name, data )
 
     done()
   }
-  
+
 }
