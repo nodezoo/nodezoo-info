@@ -26,14 +26,17 @@ This micro-service recognizes the following messages:
 
 
 ## Contributing
-The [NodeZoo][] org encourages open participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
+The [NodeZoo org][] encourages __open__ and __safe__ participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
 
 ## License
 Copyright (c) 2015, Richard Rodgers and other contributors.
 Licensed under [MIT][].
 
 
-[MIT]: ./LICENSE
-[Code of Conduct]: https://github.com/nearform/vidi-contrib/docs/code_of_conduct.md
+MIT]: ./LICENSE
+[CoC]: ./CoC.md
+[Lead]: https://github.com/mcdonnelldean
 [nearForm]: http://www.nearform.com/
 [NodeZoo]: http://www.nodezoo.com/
+[NodeZoo org]: https://github.com/nodezoo
+[Logo]: https://raw.githubusercontent.com/rjrodger/nodezoo-web/to-redux/client/assets/img/logo-nodezoo.png
