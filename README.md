@@ -28,12 +28,14 @@ This micro-service recognizes the following messages:
 ## Contributing
 The [NodeZoo org][] encourages __open__ and __safe__ participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
 
+- Before contributing please review our __[Code of Conduct][CoC]__
+
 ## License
 Copyright (c) 2015, Richard Rodgers and other contributors.
 Licensed under [MIT][].
 
 
-MIT]: ./LICENSE
+[MIT]: ./LICENSE
 [CoC]: ./CoC.md
 [Lead]: https://github.com/mcdonnelldean
 [nearForm]: http://www.nearform.com/
