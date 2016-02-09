@@ -12,6 +12,10 @@
   "author": "Richard Rodger (http://richardrodger.com)",
   "contributors": ["Kristina Matuleviciute (https://github.com/KristinaMatuleviciute)"],
   "license": "MIT",
+  "scripts":{
+    "start": "node srv/info-dev.js ",
+    "start:dev": "node srv/info-dev.js "
+  },
   "dependencies": {
     "lru-cache": "^2.5.0",
     "seneca-redis-transport": "^0.3.0",
