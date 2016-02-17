@@ -44,9 +44,12 @@ curl http://localhost:44001/act  -H "Content-Type: application/json" -v -d '{"ro
 ```
 
 ## Contributing
-The [NodeZoo org][] encourages __open__ and __safe__ participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
+The [NodeZoo org][] encourages __open__ and __safe__ participation.
 
-- Before contributing please review our __[Code of Conduct][CoC]__
+- __[Code of Conduct][CoC]__
+
+If you feel you can help in any way, be it with documentation, examples, extra testing, or new
+features please get in touch.
 
 ## License
 Copyright (c) 2014 - 2016, Richard Rodger and other contributors.
@@ -59,4 +62,4 @@ Licensed under [MIT][].
 [nearForm]: http://www.nearform.com/
 [NodeZoo]: http://www.nodezoo.com/
 [NodeZoo org]: https://github.com/nodezoo
-[Logo]: https://raw.githubusercontent.com/rjrodger/nodezoo-web/to-redux/client/assets/img/logo-nodezoo.png
+[Logo]: https://github.com/nodezoo/nodezoo-org/blob/master/assets/logo-nodezoo.png
