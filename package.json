@@ -11,12 +11,12 @@
   ],
   "author": "Richard Rodger (http://richardrodger.com)",
   "contributors": [
-    "Kristina Matuleviciute (https://github.com/KristinaMatuleviciute)"
+    "Kristina Matuleviciute (https://github.com/KristinaMatuleviciute)",
+    "Dean McDonnell (https://github.com/mcdonnelldean)"
   ],
   "license": "MIT",
   "scripts": {
-    "start": "node srv/info-dev.js ",
-    "start:dev": "node srv/info-dev.js "
+    "start": "node srv/info-dev.js",
   },
   "dependencies": {
     "lru-cache": "2.5.0",

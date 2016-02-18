@@ -1,12 +1,13 @@
 var STATS = process.env.STATS || 'localhost'
 
+var opts = {
+  mesh: {
+    auto: true,
+    pin: ['role:info,cmd:get', 'role:info,res:*']
+  }
+}
+
 require('seneca')()
   .use('../info.js')
+  .use('mesh', opts.mesh)
   .listen(44001)
-
-  .use('mesh',{auto:true, pin:['role:info,cmd:get','role:info,res:*']})
-
-  .use('msgstats',{
-    udp: { host: STATS },
-    pins:['role:info,req:part','role:info,res:part']
-  })
