@@ -57,7 +57,7 @@ Licensed under [MIT][].
 
 [main repo]: https://github.com/rjrodger/nodezoo
 [MIT]: ./LICENSE
-[CoC]: ./CoC.md
+[CoC]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
 [Lead]: https://github.com/rjrodger
 [nearForm]: http://www.nearform.com/
 [NodeZoo]: http://www.nodezoo.com/
