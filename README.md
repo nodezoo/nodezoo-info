@@ -1,10 +1,11 @@
 ![Nodezoo][Logo]
 
 # nodezoo-info
-nodezoo.com micro-service handling module. Please see the [main repo][] for more details.
 
-- __Sponsor:__ [nearForm][]
 - __Lead:__ [Richard Rodger][Lead]
+- __Sponsor:__ [nearForm][]
+
+nodezoo.com micro-service handling module. Please see the [main repo][] for more details.
 
 ## Install
 
