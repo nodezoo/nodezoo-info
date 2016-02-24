@@ -1,10 +1,14 @@
-var STATS = process.env.STATS || 'localhost'
+'use strict'
 
 var opts = {
   metrics: {
-    emitter: {enabled: true}
+    emitter: {
+      enabled: true
+    }
   },
   seneca_metrics: {
+    group: 'nodezoo',
+    tag: 'info',
     pins: [
       'role:info,req:part',
       'role:info,res:part'
