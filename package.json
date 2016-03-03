@@ -26,6 +26,6 @@
     "seneca-redis-transport": "0.3.0",
     "toolbag": "0.9.0",
     "vidi-metrics": "0.1.0",
-    "vidi-seneca-metrics": "vidi-insights/vidi-seneca-metrics#nopin"
+    "vidi-seneca-metrics": "0.2.0"
   }
 }
