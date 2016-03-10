@@ -1,56 +1,49 @@
-/* Copyright (c) 2014-2015 Richard Rodger, MIT License */
-/* jshint node:true, asi:true, eqnull:true */
-"use strict";
+'use strict'
 
+var Cache = require('lru-cache')
 
-var lru = require('lru-cache')
+var opts = {
+  plugin: 'nodezoo-info',
+  role: 'info',
+  size: 99999,
+  wait: 222
+}
 
-
-module.exports = function info( options ){
+module.exports = function (options) {
   var seneca = this
+  var extend = seneca.util.deepextend
 
-  options = seneca.util.deepextend({
-    size: 99999,
-    wait: 222
-  },options)
+  opts = extend(opts, options)
+  opts.cache = Cache(options.size)
 
+  seneca.add({role: opts.role, cmd: 'get'}, get)
+  seneca.add({role: opts.role, res: 'part'}, update)
 
-  var info_cache = lru( options.size )
+  return {
+    name: opts.plugin
+  }
+}
 
+function get (msg, done) {
+  var seneca = this
+  var name = msg.name
 
-  seneca.add( 'role:info,cmd:get', cmd_get )
-  seneca.add( 'role:info,req:part', req_module )
-  seneca.add( 'role:info,res:part', res_module )
+  seneca.act({role:opts.role, req:'part', name: name})
 
-
-  function cmd_get( args, done ) {
-    var seneca  = this
-
-    var name = args.name
-    seneca.act('role:info,req:part',{name:name})
-
-    setTimeout(function(){
-      
-      var data = info_cache.get( name ) || {}
-      done(null,data)
-
-    },options.wait)
+  function respond () {
+    done(null, (opts.cache.get(name) || {}))
   }
 
-  
-  function req_module( args, done ) {
-    done()
-  }
+  setTimeout(respond, opts.wait)
+}
 
+function update (msg, done) {
+  done()
 
-  function res_module( args, done ) {
-    var name = args.name
-    
-    var data = info_cache.get( name ) || {}
-    data[ args.part ] = args.data
-    info_cache.set( name, data )
+  var name = msg.name
+  var data = opts.cache.get(name) || {}
 
-    done()
-  }
-  
+  data[msg.part] = msg.data
+
+  opts.cache.set(name, data)
 }

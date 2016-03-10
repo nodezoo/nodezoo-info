@@ -1,16 +1,14 @@
 # nodezoo-info
-
 FROM node:4
 
-ADD . /
+RUN mkdir /src
 
-EXPOSE 44001
-EXPOSE 43001
+ADD package.json /src/
 
-CMD ["node","srv/info-dev.js","--seneca.options.tag=info","--seneca.log.all"]
+WORKDIR /src
 
-# build and run:
-# $ docker build -t nodezoo-info-04 .
-# $ docker run -d -p 44001:44001 -p 43001:43001 -e HOST=$(docker-machine ip default) -e REDIS=192.168.99.1 -e STATS=192.168.99.1 nodezoo-info-04
-# local docker ip:
-# $ docker-machine ip default
+RUN npm install
+
+COPY . /src
+
+CMD ["node", "-r", "toolbag", "srv/info-dev.js", "--seneca.options.tag=nodezoo-info", "--seneca-log=type:act"]

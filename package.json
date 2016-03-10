@@ -1,20 +1,31 @@
 {
   "name": "nodezoo-info",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "nodezoo.com micro-service handling module info.",
   "main": "info.js",
+  "license": "MIT",
+  "author": "Richard Rodger (http://richardrodger.com)",
+  "contributors": [
+    "Kristina Matuleviciute (https://github.com/KristinaMatuleviciute)",
+    "Dean McDonnell (https://github.com/mcdonnelldean)"
+  ],
   "keywords": [
     "nodezoo",
     "seneca",
     "info",
     "micro-service"
   ],
-  "author": "Richard Rodger (http://richardrodger.com)",
-  "license": "MIT",
+  "scripts": {
+    "start": "node srv/info-dev.js"
+  },
   "dependencies": {
-    "lru-cache": "^2.5.0",
-    "seneca": "^0.7.1",
-    "seneca-msgstats": "^0.2.0",
-    "seneca-redis-transport": "^0.3.0"
+    "lru-cache": "4.0.0",
+    "seneca": "1.2.0",
+    "seneca-balance-client": "0.2.0",
+    "seneca-mesh": "0.5.0",
+    "seneca-redis-transport": "0.3.0",
+    "toolbag": "0.9.0",
+    "vidi-metrics": "0.1.0",
+    "vidi-seneca-metrics": "0.2.0"
   }
 }
