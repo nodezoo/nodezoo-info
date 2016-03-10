@@ -1,10 +1,14 @@
 # nodezoo-info
-
 FROM node:4
 
-ADD . /
+RUN mkdir /src
 
-EXPOSE 44001
-EXPOSE 43001
+ADD package.json /src/
 
-CMD ["node","srv/info-dev.js","--seneca.options.tag=info","--seneca.log.all"]
+WORKDIR /src
+
+RUN npm install
+
+COPY . /src
+
+CMD ["node", "-r", "toolbag", "srv/info-dev.js", "--seneca.options.tag=nodezoo-info", "--seneca-log=type:act"]
