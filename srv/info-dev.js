@@ -18,8 +18,10 @@ var opts = {
     auto: true,
     pin: [
       'role:info,cmd:get',
-      'role:info,res:*'
+      'role:info,res:*',
+      'role:info, info:updated'
     ]
+    model: 'publish'
   }
 }
 

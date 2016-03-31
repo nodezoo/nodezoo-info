@@ -46,4 +46,5 @@ function update (msg, done) {
   data[msg.part] = msg.data
 
   opts.cache.set(name, data)
+  seneca.act('role:info,info:updated', data: data)
 }
