@@ -32,6 +32,7 @@
     "seneca": "2.0.0",
     "seneca-balance-client": "0.4.0",
     "seneca-mesh": "0.7.0",
+    "seneca-entity": "0.0.1",
     "seneca-redis-transport": "0.3.0",
     "toolbag": "2.0.0",
     "toolbag-plugin-stats-collector": "1.0.0",
