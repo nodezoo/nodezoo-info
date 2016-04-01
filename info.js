@@ -43,7 +43,9 @@ function update (msg, done) {
   var name = msg.name
   var data = opts.cache.get(name) || {}
 
+
   data[msg.part] = msg.data
+  data.name = name
 
   opts.cache.set(name, data)
   this.act('role:info,info:updated', {data: data})
