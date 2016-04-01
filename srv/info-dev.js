@@ -20,7 +20,7 @@ var opts = {
       'role:info,cmd:get',
       'role:info,res:*',
       'role:info, info:updated'
-    ]
+    ],
     model: 'publish'
   }
 }
