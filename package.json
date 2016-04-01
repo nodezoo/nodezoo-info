@@ -10,6 +10,14 @@
     "Dean McDonnell (https://github.com/mcdonnelldean)",
     "Shane Lacey (https://github.com/shanel262)"
   ],
+  "homepage": "https://github.com/nodezoo/nodezoo-info#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodezoo/nodezoo-info.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodezoo/nodezoo-info/issues"
+  },
   "keywords": [
     "nodezoo",
     "seneca",
