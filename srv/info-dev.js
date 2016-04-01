@@ -3,7 +3,7 @@
 var opts = {
   metrics: {
     emitter: {
-      enabled: true
+      enabled: false
     }
   },
   seneca_metrics: {
@@ -31,4 +31,3 @@ require('seneca')()
   .use('vidi-metrics', opts.metrics)
   .use('vidi-seneca-metrics', opts.seneca_metrics)
   .use('mesh', opts.mesh)
-  
