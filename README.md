@@ -13,29 +13,25 @@ If you're using this microservice, and need help, you can:
 - Tweet to [@nodezoo][],
 - Ask on the [Gitter][gitter-url].
 
-## Install
+## Running
+This micro-service can be ran as part of the [NodeZoo org][] system. Please follow the
+link below for details on obtaining and running the complete system.
 
-1. clone this repo into a root _/nodezoo_ folder.
-2. run `npm install`
+- [Nodezoo: The complete system][System]
 
-## Starting
-To start simply run,
-
+## Patterns Handled
+### 'role:info,cmd:get'
+Request module name and description
+```js
+seneca.act(role:'info', req:'get', {name: name})
 ```
-npm start
-```
 
-### Tagging and Logs
-To tag your service and set up logs simply pass the relevant switches on start,
-
+## Patterns Emitted
+### 'role:info,res:updated'
+Respond with this information
+```js
+seneca.act(role:'info', req:'updated', {data: data})
 ```
-npm start -- --seneca.options.tag=nodezoo-info --seneca.log.all
-```
-## Inbound Messages
-* _role:info,cmd:get_ - request module name and description
-
-## Outbound Messages
-* _role:info,res:part_ - respond with this information
 
 ## Running with Curl
 
