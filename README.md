@@ -7,41 +7,42 @@
 
 nodezoo.com micro-service handling module. Please see the [main repo][] for more details.
 
-## Install
+If you're using this microservice, and need help, you can:
 
-1. clone this repo into a root _/nodezoo_ folder.
-2. run `npm install`
+- Post a [github issue][],
+- Tweet to [@nodezoo][],
+- Ask on the [Gitter][gitter-url].
 
-## Starting
-To start simply run,
+## Running
+This micro-service can be ran as part of the [NodeZoo org][] system. Please follow the
+link below for details on obtaining and running the complete system.
 
+- [Nodezoo: The complete system][System]
+
+## Patterns Handled
+### `role:info,cmd:get`
+Request module name and description
+```js
+seneca.act('role:info, cmd:get', {name: 'seneca'})
 ```
-npm start
+
+### `role:info,res:part`
+Request update of the info cache
+```js
+seneca.act('role:info, res:part', {name: 'seneca'})
 ```
 
-### Tagging and Logs
-To tag your service and set up logs simply pass the relevant switches on start,
-
+## Patterns Emitted
+### `role:info,info:updated`
+Updates search with the newest data
+```js
+seneca.act('role:info, info:updated', {data: data})
 ```
-npm start -- --seneca.options.tag=nodezoo-info --seneca.log.all
-```
-## Inbound Messages
-* _role:info,cmd:get_ - request module name and description
 
-## Outbound Messages
-* _role:info,res:part_ - respond with this information
-
-## Running with Curl
-
-Any of the messages above can be run using curl in the following format in the command line
-
-* to check that `info_cache` has items:
-```
-curl http://localhost:44001/act  -H "Content-Type: application/js -d '{"role":"info","cmd":"get","name":"underscore"}'
-```
-* to check the headers:
-```
-curl http://localhost:44001/act  -H "Content-Type: application/json" -v -d '{"role":"info","cmd":"get","name":"underscore"}'
+### `role:info,req:part`
+Request update of the info cache
+```js
+seneca.act('role:info, req:part', {name: 'seneca'})
 ```
 
 ## Contributing
@@ -63,4 +64,7 @@ Licensed under [MIT][].
 [nearForm]: http://www.nearform.com/
 [NodeZoo]: http://www.nodezoo.com/
 [NodeZoo org]: https://github.com/nodezoo
-[Logo]: https://github.com/nodezoo/nodezoo-org/blob/master/assets/logo-nodezoo.png
+[Logo]: https://raw.githubusercontent.com/nodezoo/nodezoo-org/master/assets/logo-nodezoo.png
+[github issue]: https://github.com/nodezoo/nodezoo-info/issues
+[@nodezoo]: http://twitter.com/nodezoo
+[gitter-url]: https://gitter.im/nodezoo/nodezoo-org
