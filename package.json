@@ -25,7 +25,7 @@
     "micro-service"
   ],
   "scripts": {
-    "start": "node srv/info-dev.js"
+    "start": "node srv/start.js"
   },
   "dependencies": {
     "lru-cache": "4.0.0",
