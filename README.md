@@ -23,24 +23,24 @@ link below for details on obtaining and running the complete system.
 ### `role:info,cmd:get`
 Request module name and description
 ```js
-seneca.act('role:info, req:get', {name: 'seneca'})
+seneca.act('role:info, cmd:get', {name: 'seneca'})
 ```
 
-### `role:info,cmd:part`
-Updates the info cache
+### `role:info,res:part`
+Request update of the info cache
 ```js
-seneca.act('role:info, req:part', {name: 'seneca'})
+seneca.act('role:info, res:part', {name: 'seneca'})
 ```
 
 ## Patterns Emitted
-### `role:info,cmd:updated`
+### `role:info,info:updated`
 Updates search with the newest data
 ```js
-seneca.act('role:info, req:get', {data: data})
+seneca.act('role:info, info:updated', {data: data})
 ```
 
-### `role:info,cmd:part`
-Request update of info cache
+### `role:info,req:part`
+Request update of the info cache
 ```js
 seneca.act('role:info, req:part', {name: 'seneca'})
 ```
