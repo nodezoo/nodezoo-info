@@ -11,4 +11,4 @@ RUN npm install
 
 COPY . /src
 
-CMD ["node", "-r", "toolbag", "srv/info-dev.js", "--seneca.options.tag=nodezoo-info", "--seneca-log=type:act"]
+CMD ["node", "-r", "toolbag", "srv/start.js", "--seneca.options.tag=nodezoo-info", "--seneca-log=type:act"]
