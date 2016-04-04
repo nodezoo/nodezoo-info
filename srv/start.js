@@ -16,12 +16,10 @@ var opts = {
   },
   mesh: {
     auto: true,
-    pin: [
-      'role:info,cmd:get',
-      'role:info,res:*',
-      'role:info, info:updated'
-    ],
-    model: 'publish'
+    listen: [
+      {pin: 'role:info,cmd:get', model: 'consume'},
+      {pin: 'role:info,res:part', model: 'observe'}
+    ]
   }
 }
 
