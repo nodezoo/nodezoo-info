@@ -20,31 +20,15 @@ link below for details on obtaining and running the complete system.
 - [Nodezoo: The complete system][System]
 
 ## Patterns Handled
-### 'role:info,cmd:get'
+### `role:info,cmd:get`
 Request module name and description
 ```js
-seneca.act(role:'info', req:'get', {name: name})
+seneca.act('role:info, req:get', {name: 'seneca'})
 ```
 
 ## Patterns Emitted
-### 'role:info,res:updated'
-Respond with this information
-```js
-seneca.act(role:'info', req:'updated', {data: data})
-```
 
-## Running with Curl
-
-Any of the messages above can be run using curl in the following format in the command line
-
-* to check that `info_cache` has items:
-```
-curl http://localhost:44001/act  -H "Content-Type: application/js -d '{"role":"info","cmd":"get","name":"underscore"}'
-```
-* to check the headers:
-```
-curl http://localhost:44001/act  -H "Content-Type: application/json" -v -d '{"role":"info","cmd":"get","name":"underscore"}'
-```
+There are no outgoing messages.
 
 ## Contributing
 The [NodeZoo org][] encourages __open__ and __safe__ participation.
@@ -65,7 +49,7 @@ Licensed under [MIT][].
 [nearForm]: http://www.nearform.com/
 [NodeZoo]: http://www.nodezoo.com/
 [NodeZoo org]: https://github.com/nodezoo
-[Logo]: https://github.com/nodezoo/nodezoo-org/blob/master/assets/logo-nodezoo.png
+[Logo]: https://raw.githubusercontent.com/nodezoo/nodezoo-org/master/assets/logo-nodezoo.png
 [github issue]: https://github.com/nodezoo/nodezoo-info/issues
 [@nodezoo]: http://twitter.com/nodezoo
 [gitter-url]: https://gitter.im/nodezoo/nodezoo-org
