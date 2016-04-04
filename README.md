@@ -7,6 +7,12 @@
 
 nodezoo.com micro-service handling module. Please see the [main repo][] for more details.
 
+If you're using this microservice, and need help, you can:
+
+- Post a [github issue][],
+- Tweet to [@nodezoo][],
+- Ask on the [Gitter][gitter-url].
+
 ## Install
 
 1. clone this repo into a root _/nodezoo_ folder.
@@ -64,3 +70,6 @@ Licensed under [MIT][].
 [NodeZoo]: http://www.nodezoo.com/
 [NodeZoo org]: https://github.com/nodezoo
 [Logo]: https://github.com/nodezoo/nodezoo-org/blob/master/assets/logo-nodezoo.png
+[github issue]: https://github.com/nodezoo/nodezoo-info/issues
+[@nodezoo]: http://twitter.com/nodezoo
+[gitter-url]: https://gitter.im/nodezoo/nodezoo-org
