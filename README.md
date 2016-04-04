@@ -26,9 +26,24 @@ Request module name and description
 seneca.act('role:info, req:get', {name: 'seneca'})
 ```
 
-## Patterns Emitted
+### `role:info,cmd:part`
+Updates the info cache
+```js
+seneca.act('role:info, req:part', {name: 'seneca'})
+```
 
-There are no outgoing messages.
+## Patterns Emitted
+### `role:info,cmd:updated`
+Updates search with the newest data
+```js
+seneca.act('role:info, req:get', {data: data})
+```
+
+### `role:info,cmd:part`
+Request update of info cache
+```js
+seneca.act('role:info, req:part', {name: 'seneca'})
+```
 
 ## Contributing
 The [NodeZoo org][] encourages __open__ and __safe__ participation.
