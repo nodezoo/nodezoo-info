@@ -8,7 +8,8 @@
   "contributors": [
     "Kristina Matuleviciute (https://github.com/KristinaMatuleviciute)",
     "Dean McDonnell (https://github.com/mcdonnelldean)",
-    "Shane Lacey (https://github.com/shanel262)"
+    "Shane Lacey (https://github.com/shanel262)",
+    "Jane Quinn (https://github.com/CodeWriterWriter)"
   ],
   "homepage": "https://github.com/nodezoo/nodezoo-info#readme",
   "repository": {
@@ -25,7 +26,8 @@
     "micro-service"
   ],
   "scripts": {
-    "start": "node srv/start.js"
+    "start": "node srv/start.js",
+    "lint": "lab test -dL"
   },
   "dependencies": {
     "eslint-config-seneca": "1.1.2",
