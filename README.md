@@ -62,7 +62,7 @@ Licensed under [MIT][].
 [CoC]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
 [Lead]: https://github.com/rjrodger
 [nearForm]: http://www.nearform.com/
-[NodeZoo]: http://www.nodezoo.com/
+[System]: https://github.com/nodezoo/nodezoo-system
 [NodeZoo org]: https://github.com/nodezoo
 [Logo]: https://raw.githubusercontent.com/nodezoo/nodezoo-org/master/assets/logo-nodezoo.png
 [github issue]: https://github.com/nodezoo/nodezoo-info/issues
