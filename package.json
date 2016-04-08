@@ -27,7 +27,8 @@
   ],
   "scripts": {
     "start": "node srv/start.js",
-    "lint": "lab test -dL"
+    "lint": "lab test -dL",
+    "test": "lab"
   },
   "dependencies": {
     "eslint-config-seneca": "1.1.2",
@@ -43,5 +44,9 @@
     "toolbag-plugin-udp-reporter": "1.0.0",
     "vidi-metrics": "0.1.0",
     "vidi-seneca-metrics": "0.2.0"
+  },
+  "devDependencies": {
+    "code": "^2.1.1",
+    "lab": "^10.3.1"
   }
 }
