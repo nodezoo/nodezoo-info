@@ -2,6 +2,7 @@ Pending - x.x.x
 ---
 * Added CHANGELOG.md
 * Readme updated.
+* toolbag removed.
 
 6 April 2016 - 6.0.0
 ---
