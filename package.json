@@ -28,7 +28,7 @@
   "scripts": {
     "start": "node srv/start.js",
     "lint": "lab test -dL",
-    "test": "lab"
+    "test": "lab -v -P test -L -c -t 97"
   },
   "dependencies": {
     "eslint-config-seneca": "1.1.2",

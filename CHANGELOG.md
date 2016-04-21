@@ -3,6 +3,7 @@ Pending - x.x.x
 * Added CHANGELOG.md
 * Readme updated.
 * toolbag removed.
+* Linted and removed variables 'NodezooInfo' and 'opts' from info.js
 
 6 April 2016 - 6.0.0
 ---
