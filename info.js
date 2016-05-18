@@ -28,7 +28,7 @@ function get (msg, done) {
   var seneca = this
   var name = msg.name
 
-  seneca.act({role: opts.role, req: 'part', name: name})
+  seneca.act({role: opts.role, req: 'part', name: name, update: msg.update})
 
   function respond () {
     done(null, (opts.cache.get(name) || {}))
