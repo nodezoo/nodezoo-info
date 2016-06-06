@@ -1,5 +1,7 @@
 'use strict'
 
+var envs = process.env
+
 var opts = {
   metrics: {
     emitter: {
@@ -19,8 +21,8 @@ var opts = {
     host: envs.INFO_HOST || '127.0.0.1',
     bases: [envs.BASE_HOST || '127.0.0.1:39999'],
     listen: [
-      {pin: 'role:info,cmd:get', model: 'consume'},
-      {pin: 'role:info,res:part', model: 'observe'}
+      {pin: 'role:info,cmd:get', model: 'consume', host: envs.INFO_HOST || '127.0.0.1'},
+      {pin: 'role:info,res:part', model: 'observe', host: envs.INFO_HOST || '127.0.0.1'}
     ]
   }
 }
