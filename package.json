@@ -25,6 +25,14 @@
     "info",
     "micro-service"
   ],
+  "files": [
+    "README.md",
+    "package.json",
+    "LICENSE",
+    "info.js",
+    "Dockerfile",
+    "srv"
+  ],
   "scripts": {
     "start": "node srv/start.js",
     "lint": "lab test -dL",
