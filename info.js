@@ -1,6 +1,6 @@
 /* Copyright (c) 2014-2017 Richard Rodger and other contributors, MIT License */
 
-var lru = require('lru-cache')
+var Lru = require('lru-cache')
 
 
 module.exports = function info (options) {
@@ -12,7 +12,7 @@ module.exports = function info (options) {
   }, options)
 
 
-  var info_cache = lru (options.size)
+  var info_cache = Lru(options.size)
 
 
   seneca.add( 'role:info,cmd:get', cmd_get )
