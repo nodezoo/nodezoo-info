@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nodezoo/nodezoo-web.git"
+    "url": "https://github.com/nodezoo/nodezoo-info.git"
   },
   "author": "Richard Rodger (http://richardrodger.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nodezoo/nodezoo-web/issues"
+    "url": "https://github.com/nodezoo/nodezoo-info/issues"
   },
-  "homepage": "https://github.com/nodezoo/nodezoo-web",
+  "homepage": "https://github.com/nodezoo/nodezoo-info",
   "dependencies": {
     "lru-cache": "4.0.2",
     "seneca-redis-transport": "0.3.0",
