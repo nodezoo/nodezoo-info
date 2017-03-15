@@ -12,11 +12,6 @@ Seneca({tag: 'info'})
 
   .use('..')
 
-  .listen(9030)
-
-  .client({pin:'role:info,need:part,part:npm', port:9040})
-  .client({pin:'role:info,need:part,part:github', port:9050})
-
   .add('role:info,need:part', function (msg, reply) {
     reply()
 
@@ -24,6 +19,13 @@ Seneca({tag: 'info'})
       .act(msg,{part:'npm'})
       .act(msg,{part:'github'})
   })
+
+  .use('seneca-repl', {port:10030})
+
+  .listen(9030)
+
+  .client({pin:'role:info,need:part,part:npm', port:9040})
+  .client({pin:'role:info,need:part,part:github', port:9050})
 
 
 if (MOCK) {

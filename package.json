@@ -25,7 +25,8 @@
   "dependencies": {
     "lru-cache": "4.0.2",
     "seneca": "3.3.0",
-    "seneca-redis-transport": "0.3.0"
+    "seneca-redis-transport": "0.3.0",
+    "seneca-repl": "1.0.0"
   },
   "devDependencies": {
     "code": "4.0.0",
