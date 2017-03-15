@@ -10,7 +10,7 @@ var Seneca = require('seneca')
 Seneca({tag: 'info'})
   .test('print')
 
-  .use('../info.js')
+  .use('..')
 
   .listen(9030)
 
