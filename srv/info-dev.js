@@ -10,7 +10,7 @@ var Seneca = require('seneca')
 Seneca({tag: 'info'})
   .test('print')
 
-  .use('..')
+  .use('../info.js')
 
   .add('role:info,need:part', function (msg, reply) {
     reply()

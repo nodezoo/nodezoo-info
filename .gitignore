@@ -22,4 +22,4 @@ test/mine.options.js
 test/data
 
 
-docker/info/app
+docker/stage/app
