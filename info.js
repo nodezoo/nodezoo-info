@@ -22,7 +22,7 @@ module.exports = function info (options) {
   function cmd_get( msg, reply ) {
     var name = msg.name
 
-    this.act('role:info,need:part', {name:name})
+    this.act('role:info,need:part', {name:name, default$:{}})
 
     setTimeout(function () {
       var data = info_cache.get(name) || {}

@@ -1,0 +1,9 @@
+
+FROM nodezoo-info:1
+
+CMD ["node", "/app/srv/info-prod.js"]
+
+
+
+
+
