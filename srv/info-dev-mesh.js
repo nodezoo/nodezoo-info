@@ -4,9 +4,10 @@
 var Seneca = require('seneca')
 
 Seneca({tag: 'info'})
-  .test()
-
+  //.test()
+  .test('print')
   .use('monitor')
+
 
   .use('mesh', {
     listen: [
@@ -17,3 +18,4 @@ Seneca({tag: 'info'})
 
   .use('../info.js')
 
+  .use('seneca-repl', {port:10030})
