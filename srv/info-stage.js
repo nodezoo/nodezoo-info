@@ -5,7 +5,7 @@ var PORT = process.env.PORT || 9000
 var Seneca = require('seneca')
 
 Seneca({tag: 'info', legacy: {meta: true}})
-  .test('print')
+  //.test('print')
 
   .use('zipkin-tracer', {host: 'zipkin', sampling: 1})
   .use('statsd', {host: 'stats'})
