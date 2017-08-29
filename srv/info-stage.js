@@ -4,7 +4,9 @@ var PORT = process.env.PORT || 9000
 
 var Seneca = require('seneca')
 
-Seneca({tag: 'info'})
+Seneca({tag: 'info', legacy: {meta: true}})
+  .test('print')
+
   .use('zipkin-tracer', {host: 'zipkin', sampling: 1})
   .use('statsd', {host: 'stats'})
 
@@ -13,5 +15,5 @@ Seneca({tag: 'info'})
   .use('redis-transport')
   .use('../info.js')
 
-  .client({pin:'role:info,need:part', type:'redis', host:'redis'})
-  .listen({pin:'role:info,collect:part', type:'redis', host:'redis'})
+  .client({pin:'role:info,need:part', type:'redis', host:'redis', port:6379})
+  .listen({pin:'role:info,collect:part', type:'redis', host:'redis', port:6379})
