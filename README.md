@@ -11,7 +11,7 @@ __This microservice provides the module information page functionality.__
 ## Running
 
 To run this microservice normally, use the tooling describing in
-the [nodezoo/tao](/nodezoo/tao) repository, which shows you how to run
+the [nodezoo/tao](//github.com//nodezoo/tao) repository, which shows you how to run
 the entire system of microservices (of which this is only one of many) in
 production ([Kubernetes](//kubernetes.io)), staging
 ([Docker](//docker.com)), and development
