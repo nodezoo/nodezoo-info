@@ -31,7 +31,6 @@ which, new messages are possibly `Sent`.
 |Accepted |Actions |Sent
 |--|--|--
 |`role:info,cmd:get (SC)` |Provide module information by asking other microservices for data. |`role:info,need:part (AO)`
-||Announce need for module information|`role:info,need:part (AO)` 
 |`role:info,collect:part (AO)` |Collect partial module information|
 
 (KEY: A: asynchronous, S: synchronous, O: observed, C: consumed)
