@@ -31,9 +31,26 @@ which, new messages are possibly `Sent`.
 |Accepted |Actions |Sent
 |--|--|--
 |`role:info,cmd:get (SC)` |Provide module information by asking other microservices for data. |`role:info,need:part (AO)`
+||Announce need for module information|`role:info,need:part (AO)` 
 |`role:info,collect:part (AO)` |Collect partial module information|
 
 (KEY: A: asynchronous, S: synchronous, O: observed, C: consumed)
+
+### Service interactions
+
+![info](info.png?raw=true "suggest")
+
+
+## Testing
+
+Unit tests are in the [test](test) folder. To run, use:
+
+```sh
+$ npm test
+```
+
+Note that this is a learning system, and the tests are not intended to
+be high coverage.
 
 
 ## Running from the terminal
