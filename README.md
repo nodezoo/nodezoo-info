@@ -1,6 +1,7 @@
 # nodezoo-info
 
 [![Build Status](https://travis-ci.org/nodezoo/nodezoo-info.svg?branch=master)](https://travis-ci.org/nodezoo/nodezoo-info)
+[![Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nodezoo/nodezoo-org)
 
 This is a repository in the microservice demonstration system for
 the [Tao of Microservices](//bit.ly/rmtaomicro) book (chapter 9). This
